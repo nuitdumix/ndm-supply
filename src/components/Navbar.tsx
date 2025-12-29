@@ -1,6 +1,5 @@
 import React from 'react';
 import { useCartStore } from '../store/cartStore';
-import { useAuthStore } from '../store/authStore';
 
 interface NavbarProps {
   onOpenCart: () => void;
@@ -9,7 +8,6 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenCart, onOpenLogin }) => {
   const { items } = useCartStore();
-  const { isAuthenticated, logout } = useAuthStore();
   const itemCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (

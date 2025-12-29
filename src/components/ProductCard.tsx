@@ -1,9 +1,6 @@
 import React from 'react';
 // Motion removed for minimalist Y2K feel
 import type { Product } from '../data/products';
-import { useCartStore } from '../store/cartStore';
-import { useAuthStore } from '../store/authStore';
-import { Plus } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
