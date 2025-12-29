@@ -6,19 +6,29 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
-        'dubtronic': ['Dubtronic-Solid', 'sans-serif'],
-        '1533': ['1533', 'sans-serif'],
-      },
       colors: {
-        black: '#000000',
-        white: '#FFFFFF',
+        'ndm-dark': '#20014B',
+        'ndm-primary': '#FFA400',
+        'ndm-secondary': '#F84B76',
+        'ndm-accent': '#FFFFFF',
+        'ndm-text': '#FFFFFF',
+        'ndm-muted': '#D9CCE8',
       },
-      spacing: {
-        '1px': '1px',
-      }
+      fontFamily: {
+        'dubtronic': ['Dubtronic-Solid', 'Courier New', 'monospace'],
+        'dubtronic-inline': ['Dubtronic-Inline', 'Courier New', 'monospace'],
+        '1533': ['1533', 'Courier New', 'monospace'],
+        'mono': ['Courier New', 'monospace'],
+      },
+      animation: {
+        // Minimal direction: no custom animations retained
+      },
+      keyframes: {
+        // Removed animations for less-is-more
+      },
+      backgroundImage: {
+        // Noise removed for cleaner aesthetic
+      },
     },
   },
   plugins: [],

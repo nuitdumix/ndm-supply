@@ -10,7 +10,7 @@ function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-ndm-dark text-ndm-accent font-mono selection:bg-ndm-primary selection:text-ndm-dark">
       <Navbar 
         onOpenCart={() => setIsCartOpen(true)} 
         onOpenLogin={() => setIsLoginOpen(true)}
@@ -18,7 +18,7 @@ function App() {
 
       <main className="pt-14 min-h-screen flex flex-col">
         {/* Grid Container */}
-        <div className="flex-1 border-l border-white/20">
+        <div className="flex-1 border-l border-ndm-primary/20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             {products.map((product) => (
               <ProductCard 
@@ -31,16 +31,16 @@ function App() {
             {/* Fillers to complete the grid if needed, or just leave empty space with borders */}
             {/* For a perfect grid look, we might want to fill the remaining space with empty cells */}
             {Array.from({ length: (4 - (products.length % 4)) % 4 }).map((_, i) => (
-              <div key={`filler-${i}`} className="aspect-square border-r border-b border-white/20 hidden lg:block bg-black" />
+              <div key={`filler-${i}`} className="aspect-square border-r border-b border-ndm-primary/20 hidden lg:block bg-ndm-dark" />
             ))}
              {Array.from({ length: (2 - (products.length % 2)) % 2 }).map((_, i) => (
-              <div key={`filler-md-${i}`} className="aspect-square border-r border-b border-white/20 hidden md:block lg:hidden bg-black" />
+              <div key={`filler-md-${i}`} className="aspect-square border-r border-b border-ndm-primary/20 hidden md:block lg:hidden bg-ndm-dark" />
             ))}
           </div>
         </div>
         
         {/* Footer / Bottom Area */}
-        <div className="border-t border-white/20 p-8 text-center font-mono text-[10px] uppercase tracking-widest text-gray-500">
+        <div className="border-t border-ndm-primary/20 p-8 text-center font-mono text-[10px] uppercase tracking-widest text-ndm-muted">
           <p>NDM_SUPPLY // EST. 2025 // UNDERGROUND_CULTURE</p>
         </div>
       </main>
