@@ -47,9 +47,9 @@ export const Cart: React.FC<CartProps> = ({ isOpen, onClose }) => {
                 </div>
               ) : (
                 items.map((item) => (
-                  <div key={item.id} className="flex gap-4 border border-ndm-grid p-2 bg-ndm-dark hover:border-ndm-primary transition-colors group">
-                    <div className="w-20 h-20 border border-ndm-grid p-2 flex items-center justify-center bg-black group-hover:border-ndm-primary transition-colors">
-                      <img src={item.image} alt={item.name} className="max-w-full max-h-full object-contain grayscale contrast-125 brightness-90" />
+                  <div key={item.id} className="flex gap-4 p-2 bg-ndm-dark/50 transition-colors group">
+                    <div className="w-20 h-20 p-2 flex items-center justify-center transition-colors">
+                      <img src={item.image} alt={item.name} className="max-w-full max-h-full object-contain contrast-125 brightness-90" />
                     </div>
                     <div className="flex-1 flex flex-col justify-between">
                       <div className="flex justify-between items-start">
@@ -57,14 +57,14 @@ export const Cart: React.FC<CartProps> = ({ isOpen, onClose }) => {
                         <span className="font-mono text-xs text-ndm-primary">{item.price * item.quantity} EUR</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <div className="flex items-center border border-ndm-grid text-ndm-accent">
+                        <div className="flex items-center border border-ndm-muted/20 text-ndm-accent">
                           <button
                             onClick={() => updateQuantity(item.id, Math.max(0, item.quantity - 1))}
                             className="p-1 hover:bg-ndm-primary hover:text-ndm-dark transition-colors w-6 flex justify-center"
                           >
                             <Minus size={10} />
                           </button>
-                          <span className="px-3 font-mono text-xs w-8 text-center border-l border-r border-ndm-grid">{item.quantity}</span>
+                          <span className="px-3 font-mono text-xs w-8 text-center border-l border-r border-ndm-muted/20">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
                             className="p-1 hover:bg-ndm-primary hover:text-ndm-dark transition-colors w-6 flex justify-center"

@@ -1,3 +1,7 @@
+import cdjImg from '../assets/items/cdj.png';
+import bootsImg from '../assets/items/boots.png';
+import paillassonImg from '../assets/items/paillason.png';
+
 export interface Product {
   id: string;
   name: string;
@@ -11,21 +15,21 @@ export const products: Product[] = [
     id: '1',
     name: 'CDJ',
     price: 2499,
-    image: 'https://images.unsplash.com/photo-1516280440614-6697288d5d38?auto=format&fit=crop&q=80&w=1000',
+    image: cdjImg,
     category: 'SYSTEM'
   },
   {
     id: '2',
     name: 'Chaussures de ski',
     price: 350,
-    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80&w=1000',
+    image: bootsImg,
     category: 'UNIFORM'
   },
   {
     id: '3',
     name: 'Paillasson',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1595867627368-4e4d91559a4f?auto=format&fit=crop&q=80&w=1000',
+    image: paillassonImg,
     category: 'RELICS'
   },
   {

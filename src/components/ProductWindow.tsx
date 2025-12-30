@@ -56,7 +56,7 @@ export const ProductWindow: React.FC<ProductWindowProps> = ({ product, onClose, 
       initial={{ scale: 0.9, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.9, opacity: 0 }}
-      className="fixed left-1/2 top-1/2 w-[500px] max-w-[90vw] bg-[#c0c0c0] border-2 border-t-white border-l-white border-r-[#404040] border-b-[#404040] shadow-xl flex flex-col font-mono select-none cursor-grab active:cursor-grabbing"
+      className="fixed left-1/2 top-1/2 w-[400px] max-w-[90vw] bg-[#c0c0c0] border-2 border-t-white border-l-white border-r-[#404040] border-b-[#404040] shadow-xl flex flex-col font-mono select-none cursor-grab active:cursor-grabbing"
       style={{ 
         x: '-50%', 
         y: '-50%',
