@@ -7,13 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'ndm-dark': '#000000',
-        'ndm-primary': '#FFA400',
-        'ndm-secondary': '#F84B76',
-        'ndm-accent': '#FFFFFF',
-        'ndm-text': '#FFFFFF',
-        'ndm-muted': '#888888',
-        'ndm-grid': '#333333',
+  'ndm-dark': '#20014B',
+  'ndm-primary': '#FFA400',
+  'ndm-secondary': '#F84B76',
+  'ndm-accent': '#FFFFFF',
+  'ndm-text': '#FFFFFF',
+  'ndm-muted': '#D9CCE8',
       },
       fontFamily: {
         'dubtronic': ['Dubtronic-Solid', 'Courier New', 'monospace'],

@@ -11,6 +11,12 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const categories = Array.from(new Set(products.map(p => p.category)));
+  const filteredProducts = selectedCategory 
+    ? products.filter(p => p.category === selectedCategory)
+    : products;
 
   return (
     <div className="min-h-screen bg-ndm-dark text-ndm-accent font-mono selection:bg-ndm-primary selection:text-ndm-dark flex flex-col overflow-hidden">
@@ -20,14 +26,26 @@ function App() {
       />
 
       <main className="pt-14 flex-1 flex relative">
-        {/* Sidebar (Fake Categories for now) */}
+        {/* Sidebar */}
         <div className="hidden md:block w-64 p-8 space-y-8 fixed left-0 top-14 bottom-0 overflow-y-auto">
            <div className="space-y-2 text-xs font-bold tracking-widest text-ndm-muted">
-              <p className="text-ndm-primary">COLLECTIONS</p>
-              <p className="hover:text-white cursor-pointer">AUDIO_GEAR</p>
-              <p className="hover:text-white cursor-pointer">APPAREL</p>
-              <p className="hover:text-white cursor-pointer">ACCESSORIES</p>
-              <p className="hover:text-white cursor-pointer">HOME_GOODS</p>
+              <p 
+                className={`cursor-pointer ${selectedCategory === null ? 'text-ndm-primary' : 'hover:text-white'}`}
+                onClick={() => setSelectedCategory(null)}
+              >
+                ALL_ITEMS
+              </p>
+              <div className="h-4"></div>
+              <p className="text-ndm-primary mb-2">COLLECTIONS</p>
+              {['SYSTEM', 'UNIFORM', 'RELICS'].map(category => (
+                <p 
+                  key={category}
+                  className={`cursor-pointer uppercase ${selectedCategory === category ? 'text-white' : 'hover:text-white'}`}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </p>
+              ))}
            </div>
            
            <div className="space-y-2 text-xs font-bold tracking-widest text-ndm-muted">
@@ -39,8 +57,8 @@ function App() {
 
         {/* Grid Container */}
         <div className="flex-1 md:ml-64 p-4 md:p-12 overflow-y-auto h-[calc(100vh-3.5rem)]">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 md:gap-24">
-            {products.map((product) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-1">
+            {filteredProducts.map((product) => (
               <ProductCard 
                 key={product.id} 
                 product={product} 

@@ -12,42 +12,42 @@ export const products: Product[] = [
     name: 'CDJ',
     price: 2499,
     image: 'https://images.unsplash.com/photo-1516280440614-6697288d5d38?auto=format&fit=crop&q=80&w=1000',
-    category: 'Audio'
+    category: 'SYSTEM'
   },
   {
     id: '2',
     name: 'Chaussures de ski',
     price: 350,
     image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80&w=1000',
-    category: 'Sport'
+    category: 'UNIFORM'
   },
   {
     id: '3',
     name: 'Paillasson',
     price: 25,
     image: 'https://images.unsplash.com/photo-1595867627368-4e4d91559a4f?auto=format&fit=crop&q=80&w=1000',
-    category: 'Home'
+    category: 'RELICS'
   },
   {
     id: '4',
     name: 'Elektron Digitakt 2',
     price: 999,
     image: 'https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&q=80&w=1000',
-    category: 'Audio'
+    category: 'SYSTEM'
   },
   {
     id: '5',
     name: 'Câble RCA',
     price: 15,
     image: 'https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&q=80&w=1000',
-    category: 'Accessories'
+    category: 'RELICS'
   },
   {
     id: '6',
     name: 'Lampe Vintage',
     price: 120,
     image: 'https://images.unsplash.com/photo-1507473888900-52e1adad5420?auto=format&fit=crop&q=80&w=1000',
-    category: 'Home'
+    category: 'RELICS'
   },
   {
     id: '7',

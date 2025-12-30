@@ -40,7 +40,7 @@ export const Login: React.FC<LoginProps> = ({ isOpen, onClose }) => {
             <div className="flex justify-between items-center mb-6 border-b border-ndm-grid pb-2">
               <div className="flex items-center gap-2">
                  <div className="w-2 h-2 bg-ndm-primary animate-pulse rounded-full"></div>
-                 <h2 className="font-mono text-xs uppercase font-bold tracking-widest text-ndm-accent">SECURE_LOGIN_SHELL</h2>
+                 <h2 className="font-mono text-xs uppercase font-bold tracking-widest text-ndm-accent">RESIDENT_ACCESS</h2>
               </div>
               <button onClick={onClose} className="text-ndm-muted hover:text-ndm-primary font-mono text-xs uppercase">
                 [ ESC ]
