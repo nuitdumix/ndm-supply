@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-  'ndm-dark': '#d5d574',
+  'ndm-dark': '#dbff00',
   'ndm-primary': '#000f8b',
   'ndm-secondary': '#F84B76',
   'ndm-accent': '#20014B',

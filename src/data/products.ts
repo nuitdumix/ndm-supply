@@ -1,6 +1,11 @@
 import cdjImg from '../assets/items/cdj.png';
 import bootsImg from '../assets/items/boots.png';
 import paillassonImg from '../assets/items/paillason.png';
+import beer from '../assets/items/beer.png';
+import digtakt from '../assets/items/digtakt.png';
+import keyboard from '../assets/items/keyboard.png';
+import toaster from '../assets/items/toaster.png';
+import tram from '../assets/items/tram.png';
 
 export interface Product {
   id: string;
@@ -36,7 +41,7 @@ export const products: Product[] = [
     id: '4',
     name: 'Elektron Digitakt 2',
     price: 999,
-    image: 'https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&q=80&w=1000',
+    image: digtakt,
     category: 'SYSTEM'
   },
   {
@@ -57,7 +62,7 @@ export const products: Product[] = [
     id: '7',
     name: 'Toaster',
     price: 45,
-    image: 'https://images.unsplash.com/photo-1583524505974-6facd53f4597?auto=format&fit=crop&q=80&w=1000',
+    image: toaster,
     category: 'Home'
   },
   {
@@ -92,33 +97,26 @@ export const products: Product[] = [
     id: '12',
     name: 'Bière Canette 50cl NDM',
     price: 6,
-    image: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&q=80&w=1000',
+    image: beer,
     category: 'Drink'
   },
   {
     id: '13',
     name: 'Clavier Switchs Roses',
     price: 180,
-    image: 'https://images.unsplash.com/photo-1587829741301-dc798b91a603?auto=format&fit=crop&q=80&w=1000',
+    image: keyboard,
     category: 'Tech'
-  },
-  {
-    id: '14',
-    name: 'T2 Centre Dijon',
-    price: 180000,
-    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1000',
-    category: 'Real Estate'
   },
   {
     id: '15',
     name: 'T2 Tram Rebrand NDM',
     price: 5000000,
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1000',
+    image: tram,
     category: 'Transport'
   },
   {
     id: '16',
-    name: 'Vélo NDM',
+    name: 'Vélo MTB',
     price: 450,
     image: 'https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?auto=format&fit=crop&q=80&w=1000',
     category: 'Transport'
@@ -131,13 +129,6 @@ export const products: Product[] = [
     category: 'Apparel'
   },
   {
-    id: '18',
-    name: 'Vinyle NDM',
-    price: 25,
-    image: 'https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?auto=format&fit=crop&q=80&w=1000',
-    category: 'Music'
-  },
-  {
     id: '19',
     name: 'USB Key',
     price: 15,
@@ -146,7 +137,7 @@ export const products: Product[] = [
   },
   {
     id: '20',
-    name: 'String NDM avec le chat',
+    name: 'String NDM',
     price: 20,
     image: 'https://images.unsplash.com/photo-1596568359553-a56de6970068?auto=format&fit=crop&q=80&w=1000',
     category: 'Apparel'
