@@ -13,7 +13,6 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const categories = Array.from(new Set(products.map(p => p.category)));
   const filteredProducts = selectedCategory 
     ? products.filter(p => p.category === selectedCategory)
     : products;
