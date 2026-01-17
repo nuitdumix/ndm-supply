@@ -7,12 +7,25 @@ import keyboard from '../assets/items/keyboard.png';
 import toaster from '../assets/items/toaster.png';
 import tram from '../assets/items/tram.png';
 import beanie from '../assets/items/beanie.png';
+
+export interface Archive {
+  id: string;
+  name: string;
+  year: number;
+}
+
+export const ARCHIVES: Archive[] = [
+  { id: '2024_DROP', name: '2024_DROP', year: 2024 },
+  { id: '2023_DROP', name: '2023_DROP', year: 2023 }
+];
+
 export interface Product {
   id: string;
   name: string;
   price: number;
   image: string;
   category: string;
+  archiveId?: string;
 }
 
 export const products: Product[] = [
@@ -21,28 +34,32 @@ export const products: Product[] = [
     name: 'CDJ',
     price: 2499,
     image: cdjImg,
-    category: '2024_DROP'
+    category: 'SYSTEM',
+    archiveId: '2024_DROP'
   },
   {
     id: '2',
     name: 'Chaussures de ski',
     price: 350,
     image: bootsImg,
-    category: 'UNIFORM'
+    category: 'UNIFORM',
+    archiveId: '2024_DROP'
   },
   {
     id: '3',
     name: 'Paillasson',
     price: 25,
     image: paillassonImg,
-    category: 'RELICS'
+    category: 'RELICS',
+    archiveId: '2024_DROP'
   },
   {
     id: '4',
     name: 'Elektron Digitakt 2',
     price: 999,
     image: digtakt,
-    category: '2024_DROP'
+    category: 'SYSTEM',
+    archiveId: '2024_DROP'
   },
   {
     id: '5',
@@ -112,14 +129,16 @@ export const products: Product[] = [
     name: 'T2 Tram Rebrand NDM',
     price: 5000000,
     image: tram,
-    category: '2023_DROP'
+    category: 'RELICS',
+    archiveId: '2023_DROP'
   },
   {
     id: '16',
     name: 'Vélo MTB',
     price: 450,
     image: 'https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?auto=format&fit=crop&q=80&w=1000',
-    category: '2023_DROP'
+    category: 'UNIFORM',
+    archiveId: '2023_DROP'
   },
   {
     id: '17',

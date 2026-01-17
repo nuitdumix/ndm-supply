@@ -5,7 +5,7 @@ import { ProductCard } from './components/ProductCard';
 import { Cart } from './components/Cart';
 import { Login } from './components/Login';
 import { ProductWindow } from './components/ProductWindow';
-import { products, type Product } from './data/products';
+import { products, ARCHIVES, type Product } from './data/products';
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -14,7 +14,13 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const filteredProducts = selectedCategory 
-    ? products.filter(p => p.category === selectedCategory)
+    ? products.filter(p => {
+        const isArchive = ARCHIVES.some(a => a.id === selectedCategory);
+        if (isArchive) {
+          return p.archiveId === selectedCategory;
+        }
+        return p.category === selectedCategory;
+      })
     : products;
 
   return (
@@ -49,18 +55,15 @@ function App() {
            
            <div className="space-y-2 text-xs font-bold tracking-widest text-ndm-muted">
               <p className="text-ndm-primary">ARCHIVE</p>
-              <p 
-                className={`cursor-pointer uppercase ${selectedCategory === '2024_DROP' ? 'text-white' : 'hover:text-white'}`}
-                onClick={() => setSelectedCategory('2024_DROP')}
-              >
-                2024_DROP
-              </p>
-              <p 
-                className={`cursor-pointer uppercase ${selectedCategory === '2023_DROP' ? 'text-white' : 'hover:text-white'}`}
-                onClick={() => setSelectedCategory('2023_DROP')}
-              >
-                2023_DROP
-              </p>
+              {ARCHIVES.map(archive => (
+                <p 
+                  key={archive.id}
+                  className={`cursor-pointer uppercase ${selectedCategory === archive.id ? 'text-white' : 'hover:text-white'}`}
+                  onClick={() => setSelectedCategory(archive.id)}
+                >
+                  {archive.name}
+                </p>
+              ))}
            </div>
         </div>
 
