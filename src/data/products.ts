@@ -6,7 +6,7 @@ import digtakt from '../assets/items/digtakt.png';
 import keyboard from '../assets/items/keyboard.png';
 import toaster from '../assets/items/toaster.png';
 import tram from '../assets/items/tram.png';
-
+import beanie from '../assets/items/beanie.png';
 export interface Product {
   id: string;
   name: string;
@@ -21,7 +21,7 @@ export const products: Product[] = [
     name: 'CDJ',
     price: 2499,
     image: cdjImg,
-    category: 'SYSTEM'
+    category: '2024_DROP'
   },
   {
     id: '2',
@@ -42,14 +42,14 @@ export const products: Product[] = [
     name: 'Elektron Digitakt 2',
     price: 999,
     image: digtakt,
-    category: 'SYSTEM'
+    category: '2024_DROP'
   },
   {
     id: '5',
-    name: 'Câble RCA',
+    name: 'Beanie',
     price: 15,
-    image: 'https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&q=80&w=1000',
-    category: 'RELICS'
+    image: beanie,
+    category: 'UNIFORM'
   },
   {
     id: '6',
@@ -112,14 +112,14 @@ export const products: Product[] = [
     name: 'T2 Tram Rebrand NDM',
     price: 5000000,
     image: tram,
-    category: 'Transport'
+    category: '2023_DROP'
   },
   {
     id: '16',
     name: 'Vélo MTB',
     price: 450,
     image: 'https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?auto=format&fit=crop&q=80&w=1000',
-    category: 'Transport'
+    category: '2023_DROP'
   },
   {
     id: '17',

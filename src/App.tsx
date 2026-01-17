@@ -49,8 +49,18 @@ function App() {
            
            <div className="space-y-2 text-xs font-bold tracking-widest text-ndm-muted">
               <p className="text-ndm-primary">ARCHIVE</p>
-              <p className="hover:text-white cursor-pointer">2024_DROP</p>
-              <p className="hover:text-white cursor-pointer">2023_DROP</p>
+              <p 
+                className={`cursor-pointer uppercase ${selectedCategory === '2024_DROP' ? 'text-white' : 'hover:text-white'}`}
+                onClick={() => setSelectedCategory('2024_DROP')}
+              >
+                2024_DROP
+              </p>
+              <p 
+                className={`cursor-pointer uppercase ${selectedCategory === '2023_DROP' ? 'text-white' : 'hover:text-white'}`}
+                onClick={() => setSelectedCategory('2023_DROP')}
+              >
+                2023_DROP
+              </p>
            </div>
         </div>
 

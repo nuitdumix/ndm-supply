@@ -41,11 +41,18 @@ export const useCartStore = create<CartState>()(
           items: state.items.filter((item) => item.id !== productId),
         })),
       updateQuantity: (productId, quantity) =>
-        set((state) => ({
-          items: state.items.map((item) =>
-            item.id === productId ? { ...item, quantity } : item
-          ),
-        })),
+        set((state) => {
+          if (quantity <= 0) {
+            return {
+              items: state.items.filter((item) => item.id !== productId),
+            };
+          }
+          return {
+            items: state.items.map((item) =>
+              item.id === productId ? { ...item, quantity } : item
+            ),
+          };
+        }),
       toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
       clearCart: () => set({ items: [] }),
       total: () => {

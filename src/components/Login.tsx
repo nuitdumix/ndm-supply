@@ -10,13 +10,20 @@ interface LoginProps {
 
 export const Login: React.FC<LoginProps> = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(false);
   const { login } = useAuthStore();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      login(email);
-      onClose();
+      const success = login(email);
+      if (success) {
+        setError(false);
+        onClose();
+        setEmail('');
+      } else {
+        setError(true);
+      }
     }
   };
 
@@ -56,14 +63,19 @@ export const Login: React.FC<LoginProps> = ({ isOpen, onClose }) => {
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-ndm-dark border border-ndm-grid p-3 font-mono text-sm focus:outline-none focus:border-ndm-primary text-ndm-accent placeholder-ndm-grid"
+                    onChange={(e) => { setEmail(e.target.value); setError(false); }}
+                    className={`w-full bg-ndm-dark border ${error ? 'border-red-500 text-red-500' : 'border-ndm-grid text-ndm-accent'} p-3 font-mono text-sm focus:outline-none focus:border-ndm-primary placeholder-ndm-grid transition-colors`}
                     placeholder="user@ndm.system"
                     required
                     autoFocus
                   />
                   <div className="absolute right-3 top-1/2 -translate-y-1/2 w-2 h-4 bg-ndm-primary animate-blink pointer-events-none opacity-50"></div>
                 </div>
+                {error && (
+                  <span className="text-[9px] text-red-500 font-mono mt-1 block uppercase">
+                    Error: Identity not recognized
+                  </span>
+                )}
               </div>
               <button
                 type="submit"

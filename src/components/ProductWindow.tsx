@@ -15,6 +15,9 @@ export const ProductWindow: React.FC<ProductWindowProps> = ({ product, onClose, 
   const controls = useDragControls();
   const [isAdded, setIsAdded] = useState(false);
 
+  // Beanie ID is '5'
+  const isPurchasable = product.id === '5';
+
   useEffect(() => {
     if (isAdded) {
       const timer = setTimeout(() => {
@@ -25,6 +28,7 @@ export const ProductWindow: React.FC<ProductWindowProps> = ({ product, onClose, 
   }, [isAdded]);
 
   const handleAddToCart = () => {
+    if (!isPurchasable) return;
     addItem(product);
     setIsAdded(true);
   };
@@ -34,13 +38,11 @@ export const ProductWindow: React.FC<ProductWindowProps> = ({ product, onClose, 
       window.getSelection()?.removeAllRanges();
     }
     document.body.style.userSelect = 'none';
-    document.body.style.webkitUserSelect = 'none';
     document.body.style.cursor = 'grabbing';
   };
 
   const handleDragEnd = () => {
     document.body.style.userSelect = '';
-    document.body.style.webkitUserSelect = '';
     document.body.style.cursor = '';
   };
 
@@ -96,19 +98,22 @@ export const ProductWindow: React.FC<ProductWindowProps> = ({ product, onClose, 
           <div className="text-xs font-bold tracking-widest space-y-1">
              <p>RELEASED 2025 [ARCHIVED]</p>
              <p>{product.price} EUR</p>
+             {!isPurchasable && <p className="text-red-500">TOO_LATE</p>}
           </div>
 
           <button
             onClick={handleAddToCart}
             onPointerDown={(e) => e.stopPropagation()}
-            disabled={isAdded}
+            disabled={isAdded || !isPurchasable}
             className={`w-full py-2 font-bold uppercase tracking-widest transition-all border border-t-white border-l-white border-r-[#404040] border-b-[#404040] active:border-t-[#404040] active:border-l-[#404040] active:border-r-white active:border-b-white cursor-pointer ${
               isAdded 
                 ? 'bg-ndm-primary text-ndm-dark cursor-default' 
-                : 'bg-[#c0c0c0] text-black hover:bg-[#d0d0d0]'
+                : !isPurchasable
+                  ? 'bg-[#a0a0a0] text-gray-500 cursor-not-allowed active:border-t-white active:border-l-white active:border-r-[#404040] active:border-b-[#404040]'
+                  : 'bg-[#c0c0c0] text-black hover:bg-[#d0d0d0]'
             }`}
           >
-            {isAdded ? 'ADDED TO CART' : 'ADD TO CART'}
+            {isAdded ? 'ADDED TO CART' : (!isPurchasable ? 'NOT AVAILABLE' : 'ADD TO CART')}
           </button>
         </div>
       </div>

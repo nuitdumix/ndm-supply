@@ -9,7 +9,7 @@ interface CartProps {
 }
 
 export const Cart: React.FC<CartProps> = ({ isOpen, onClose }) => {
-  const { items, removeItem, updateQuantity, total } = useCartStore();
+  const { items, removeItem, updateQuantity, total, clearCart } = useCartStore();
 
   return (
     <AnimatePresence>
@@ -40,6 +40,16 @@ export const Cart: React.FC<CartProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
+              <div className="flex justify-end">
+                {items.length > 0 && (
+                   <button 
+                     onClick={clearCart}
+                     className="text-[9px] font-mono uppercase text-red-500 hover:bg-red-500 hover:text-white px-2 py-1 border border-transparent hover:border-red-500 transition-colors"
+                   >
+                     [ CLEAR_BUFFER ]
+                   </button>
+                )}
+              </div>
               {items.length === 0 ? (
                 <div className="h-full flex flex-col items-center justify-center font-mono text-xs text-ndm-muted uppercase tracking-widest gap-2 border border-dashed border-ndm-grid m-4">
                   <span>[ NULL_DATA ]</span>
