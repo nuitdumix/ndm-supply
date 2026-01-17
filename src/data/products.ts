@@ -6,7 +6,9 @@ import digtakt from '../assets/items/digtakt.png';
 import keyboard from '../assets/items/keyboard.png';
 import toaster from '../assets/items/toaster.png';
 import tram from '../assets/items/tram.png';
+import tie from '../assets/items/tie.png';
 import beanie from '../assets/items/beanie.png';
+import lobster from '../assets/items/lobster.png';
 
 export interface Archive {
   id: string;
@@ -86,7 +88,7 @@ export const products: Product[] = [
     id: '8',
     name: 'Cravate',
     price: 30,
-    image: 'https://images.unsplash.com/photo-1589756823695-278bc923f962?auto=format&fit=crop&q=80&w=1000',
+    image: tie,
     category: 'Apparel'
   },
   {
@@ -144,7 +146,7 @@ export const products: Product[] = [
     id: '17',
     name: 'Moufle Lobster Tri-doigt',
     price: 65,
-    image: 'https://images.unsplash.com/photo-1582966772652-64d75f369282?auto=format&fit=crop&q=80&w=1000',
+    image: lobster,
     category: 'Apparel'
   },
   {

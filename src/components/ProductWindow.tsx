@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useDragControls } from 'framer-motion';
 import { X } from 'lucide-react';
-import { products, ARCHIVES, type Product } from '../data/products';
+import { ARCHIVES, type Product } from '../data/products';
 import { useCartStore } from '../store/cartStore';
 
 interface ProductWindowProps {
@@ -100,7 +100,7 @@ export const ProductWindow: React.FC<ProductWindowProps> = ({ product, onClose, 
           <div className="text-xs font-bold tracking-widest space-y-1">
              <p>{productArchive ? `RELEASED ${productArchive.year} [ARCHIVED]` : 'CURRENT_SEASON_ITEM'}</p>
              <p>{product.price} EUR</p>
-             {!isPurchasable && <p className="text-red-500">DISPLAY_ONLY</p>}
+             {!isPurchasable && <p className="text-red-500">TOO_LATE</p>}
           </div>
 
           <button
