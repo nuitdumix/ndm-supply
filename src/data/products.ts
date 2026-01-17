@@ -8,7 +8,10 @@ import toaster from '../assets/items/toaster.png';
 import tram from '../assets/items/tram.png';
 import tie from '../assets/items/tie.png';
 import beanie from '../assets/items/beanie.png';
+import usb from '../assets/items/usb.png';
 import lobster from '../assets/items/lobster.png';
+import string from '../assets/items/string.png';
+import brosse from '../assets/items/brosse.png';
 
 export interface Archive {
   id: string;
@@ -71,13 +74,6 @@ export const products: Product[] = [
     category: 'UNIFORM'
   },
   {
-    id: '6',
-    name: 'Lampe Vintage',
-    price: 120,
-    image: 'https://images.unsplash.com/photo-1507473888900-52e1adad5420?auto=format&fit=crop&q=80&w=1000',
-    category: 'RELICS'
-  },
-  {
     id: '7',
     name: 'Toaster',
     price: 45,
@@ -92,25 +88,11 @@ export const products: Product[] = [
     category: 'Apparel'
   },
   {
-    id: '9',
-    name: 'Fake Magazine de Musique',
-    price: 12,
-    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1000',
-    category: 'Print'
-  },
-  {
     id: '10',
     name: 'Brosse à dents',
     price: 5,
-    image: 'https://images.unsplash.com/photo-1559676169-a79b1f66316d?auto=format&fit=crop&q=80&w=1000',
+    image: brosse,
     category: 'Hygiene'
-  },
-  {
-    id: '11',
-    name: 'Vinyles Intégrale NDM',
-    price: 150,
-    image: 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&q=80&w=1000',
-    category: 'Music'
   },
   {
     id: '12',
@@ -135,32 +117,24 @@ export const products: Product[] = [
     archiveId: '2023_DROP'
   },
   {
-    id: '16',
-    name: 'Vélo MTB',
-    price: 450,
-    image: 'https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?auto=format&fit=crop&q=80&w=1000',
-    category: 'UNIFORM',
-    archiveId: '2023_DROP'
-  },
-  {
     id: '17',
     name: 'Moufle Lobster Tri-doigt',
     price: 65,
     image: lobster,
-    category: 'Apparel'
+    category: 'UNIFORM'
   },
   {
     id: '19',
     name: 'USB Key',
     price: 15,
-    image: 'https://images.unsplash.com/photo-1625895197185-efcec01cffe0?auto=format&fit=crop&q=80&w=1000',
-    category: 'Tech'
+    image: usb,
+    category: 'SYSTEM'
   },
   {
     id: '20',
     name: 'String NDM',
     price: 20,
-    image: 'https://images.unsplash.com/photo-1596568359553-a56de6970068?auto=format&fit=crop&q=80&w=1000',
+    image: string,
     category: 'Apparel'
   }
 ];
